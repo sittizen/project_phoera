@@ -80,6 +80,7 @@ frontend/jspm_packages
 frontend/npm-debug.*
 frontend/link-checker-results.txt
 frontend/app/**/*.js
+frontend/app/*.map
 frontend/*.js.map
 frontend/e2e/**/*.js
 frontend/e2e/**/*.js.map
