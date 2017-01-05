@@ -27,6 +27,7 @@ services:
     build: ./compose/nginx
     depends_on:
       - django
+      - angular
 
     ports:
       - "0.0.0.0:80:80"
@@ -39,3 +40,11 @@ services:
     build:
       context: .
       dockerfile: ./compose/luigi/Dockerfile
+
+  angular:
+    build:
+      context: .
+      dockerfile: ./compose/angular/Dockerfile
+
+    volumes:
+      - ./frontend:/var/www/angular

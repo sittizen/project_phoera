@@ -53,3 +53,15 @@ services:
       - "8082:8082"
     links:
       - django
+
+  angular:
+    build:
+      context: .
+      dockerfile: ./compose/angular/Dockerfile-dev
+
+    volumes:
+      - ./frontend:/var/www/angular
+
+    ports:
+      - "3000:3000"
+      - "3001:3001"
