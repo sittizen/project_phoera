@@ -29,7 +29,7 @@ Upgraders: for a fresh start, consider running these commands
   * removed wallaby
   * shrink styles.css
   * refine tsconfig.json
-  * `AppComponent` uses interpolation
+  * `BookComponent` uses interpolation
 
 <a name="0.2.16"></a>
 # 0.2.16 (2016-11-14)
