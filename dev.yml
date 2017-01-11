@@ -20,6 +20,7 @@ services:
     command: /start-dev.sh
     depends_on:
       - postgres
+      - consul
     environment:
       - POSTGRES_USER=project_phoera
       - USE_DOCKER=yes
@@ -58,10 +59,19 @@ services:
     build:
       context: .
       dockerfile: ./compose/angular/Dockerfile-dev
-
+    depends_on:
+      - consul
     volumes:
       - ./frontend:/var/www/angular
-
     ports:
       - "3000:3000"
       - "3001:3001"
+
+  consul:
+    build:
+      context: .
+      dockerfile: ./compose/consul/Dockerfile-dev
+    volumes:
+      - ./consul/config/:/consul/config
+    ports:
+      - "8500:8500"

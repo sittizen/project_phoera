@@ -12,6 +12,8 @@ RUN pip install -r /requirements/production.txt \
 COPY . /app
 RUN chown -R django /app
 
+COPY ./compose/consul/bin/consul /usr/local/bin
+
 COPY ./compose/django/gunicorn.sh /gunicorn.sh
 COPY ./compose/django/entrypoint.sh /entrypoint.sh
 RUN sed -i 's/\r//' /entrypoint.sh \

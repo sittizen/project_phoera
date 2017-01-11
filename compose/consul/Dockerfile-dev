@@ -1,0 +1,6 @@
+FROM consul:0.7.2
+
+COPY ./compose/consul/start-dev.sh /start-dev.sh
+RUN chmod +x /start-dev.sh
+
+ENTRYPOINT ["/start-dev.sh"]
