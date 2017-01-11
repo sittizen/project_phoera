@@ -40,5 +40,6 @@ redis>=2.10.5
 # Django REST
 djangorestframework<3.6
 django-rest-swagger<2.2
+django-cors-headers
 
 # Your custom requirements go here
