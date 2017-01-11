@@ -75,3 +75,10 @@ services:
       - ./consul/config/:/consul/config
     ports:
       - "8500:8500"
+
+  registrator:
+    build:
+      context: .
+      dockerfile: ./compose/registrator/Dockerfile-dev
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock

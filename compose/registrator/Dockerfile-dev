@@ -1,0 +1,6 @@
+FROM gliderlabs/registrator:latest
+
+COPY ./compose/registrator/start-dev.sh /start-dev.sh
+RUN chmod +x /start-dev.sh
+
+ENTRYPOINT ["/start-dev.sh"]
