@@ -13,6 +13,12 @@ services:
     environment:
       - POSTGRES_USER=project_phoera
 
+  riak:
+    image: basho/riak-kv
+    ports:
+      - "8087:8087"
+      - "8098:8098"
+
   django:
     build:
       context: .
