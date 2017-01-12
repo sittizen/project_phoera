@@ -1,6 +1,6 @@
 FROM gliderlabs/registrator:latest
 
-COPY ./compose/registrator/dockerize-linux-amd64-v0.3.0.tar.gz /dockerize-linux-amd64-v0.3.0.tar.gz
+COPY ./compose/dockerize-linux-amd64-v0.3.0.tar.gz /dockerize-linux-amd64-v0.3.0.tar.gz
 RUN tar -C /usr/local/bin -xzvf /dockerize-linux-amd64-v0.3.0.tar.gz
 RUN rm /dockerize-linux-amd64-v0.3.0.tar.gz
 

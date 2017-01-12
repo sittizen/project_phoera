@@ -17,7 +17,6 @@ services:
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile-dev
-    command: /start-dev.sh
     depends_on:
       - postgres
       - consul
@@ -30,6 +29,7 @@ services:
       - "8000:8000"
     links:
       - postgres
+    command: /start-dev.sh
 
   pycharm:
     build:
