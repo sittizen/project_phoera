@@ -1,5 +1,9 @@
 FROM gliderlabs/registrator:latest
 
+COPY ./compose/registrator/dockerize-linux-amd64-v0.3.0.tar.gz /dockerize-linux-amd64-v0.3.0.tar.gz
+RUN tar -C /usr/local/bin -xzvf /dockerize-linux-amd64-v0.3.0.tar.gz
+RUN rm /dockerize-linux-amd64-v0.3.0.tar.gz
+
 COPY ./compose/registrator/start-dev.sh /start-dev.sh
 RUN chmod +x /start-dev.sh
 

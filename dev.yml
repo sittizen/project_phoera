@@ -82,3 +82,6 @@ services:
       dockerfile: ./compose/registrator/Dockerfile-dev
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock
+    links:
+      - consul
+    command: dockerize -wait http://consul:8500 /start-dev.sh
